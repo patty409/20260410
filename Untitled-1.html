@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專案目錄導覽</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0; /* 花卉白 */
+            background-image: radial-gradient(#ffe4e1 1.5px, transparent 1.5px); /* 淡淡的小粉點 */
+            background-size: 30px 30px;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 側邊導覽列 */
+        .sidebar {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-right: 2px solid #ffb6c1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #ffb6c1;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .student-info {
+            background: #ffe4e1;
+            color: #d63384;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        nav li {
+            margin: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #fff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        nav a::before {
+            content: "🌼";
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        nav a:hover {
+            transform: translateX(5px);
+            background-color: #fff0f5;
+            border-color: #ffb6c1;
+            color: #d63384;
+            box-shadow: 0 4px 8px rgba(214, 51, 132, 0.1);
+        }
+
+        /* 右側主內容區 */
+        .main-content {
+            flex-grow: 1;
+            position: relative;
+            background: #fff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        /* 裝飾小花 */
+        .flower-bg {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        header::before {
+            content: "🌸";
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <header>
+            <h1>練習專案目錄</h1>
+            <div class="student-info">學號：413730176</div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="ex1/index.html" target="content-frame">練習 1：第一個 Vue</a></li>
+                <li><a href="ex2/index.html" target="content-frame">練習 2：資料綁定</a></li>
+                <li><a href="ex3/index.html" target="content-frame">練習 3：事件處理</a></li>
+                <li><a href="ex4/index.html" target="content-frame">練習 4：表單雙向綁定</a></li>
+                <li><a href="ex5/index.html" target="content-frame">練習 5：條件渲染 (v-if)</a></li>
+                <li><a href="ex6/index.html" target="content-frame">練習 6：清單渲染 (v-for)</a></li>
+                <li><a href="ex7/index.html" target="content-frame">練習 7：計算屬性</a></li>
+                <li><a href="ex8/index.html" target="content-frame">練習 8：樣式與 Class</a></li>
+                <li><a href="ex9/index.html" target="content-frame">練習 9：待辦事項清單</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <iframe name="content-frame" src="ex1/index.html" title="內容顯示區"></iframe>
+        <div class="flower-bg">🌸</div>
+    </main>
+
+</body>
+</html>
